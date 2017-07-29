@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="script.js">  </script>
+</head>
+<body>
+    <p id="moneysum">your betmoney is 500$</p>
+<h1 class="Header"> Betting game</h1>
+    <form>
+        Fist player<br>
+<input id="first player" type="text" name="First Player"> <br>
+        Second player<br>
+<input id="second player" type="text" name="Second Player"><br>
+        how much you want to bet<br>
+<input id="bet" type="text" name="Betting"><br> 
+    and who do you want to bet on?<br>  
+<input id="whobet"  type="text" name "Betting"><br> 
+		who won?<br>
+First player<input id="fpwon" type="checkbox" name="firstplayerwon"><br>
+Second player<input id="spwon" type="checkbox" name="firstplayerwon"><br>		
+      <button onclick="script()">submit results</button>
+       </form>
+    <p> made by mister therx</p>
+	<script>
+
+			
+	var firstplayer= document.getElementById("first player")
+var secondplayer = document.getElementById("second player")
+var whobet = document.getElementById("whobet")
+var moneysum = document.getElementById("moneysum")
+var bettingpay = document.getElementById("bet")
+var money=500
+var moneytotal = function(){
+moneysum.innerHTML="your betmoney is"+money  
+}
+
+var script= function(){
+if (document.getElementById("fpwon").checked==true&& whobet.value==firstplayer.value)
+	{
+		money+=bettingpay.value
+		
+		prompt("you have won"+money)
+		
+	}
+else if(document.getElementById("spwon").checked==true&& whobet.value==secondplayer.value)	{
+	
+	money+=bettingpay.value
+		
+	prompt("you have won"+money)
+		 
+}
+	else{
+		
+		money=bettingpay.value
+		prompt("you lost nibba")
+		
+		
+	}
+	
+	
+	
+}		
+	</script>
+   
+</body>  
